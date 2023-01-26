@@ -2,12 +2,11 @@
 title: Number of Business Days between date ranges
 tags: date
 author: srivatsa-cfg
-cover: blog_images/flower-vase.jpg
-firstSeen: 2023-01-25T12:48:49+03:00
+createdOn: 2023-01-25T12:48:49+03:00
 lastUpdated: 2023-01-25T12:48:49+03:00
 ---
 
-Calculates the number of business days (in d) between two dates.
+Calculates the number of business days between two date ranges using moment.
 
 
 ```js
