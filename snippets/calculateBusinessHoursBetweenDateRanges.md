@@ -2,8 +2,8 @@
 title: Number of Business Hours between date ranges
 tags: date
 author: srivatsa-cfg
-createdOn: 2023-01-25T12:48:49+03:00
-lastUpdated: 2023-01-25T12:48:49+03:00
+createdOn: 2023-02-01T12:48:49+03:00
+lastUpdated: 2023-02-01T12:48:49+03:00
 ---
 
 Calculates the number of business hours between two date ranges using moment.
@@ -29,11 +29,12 @@ moment.updateLocale('us', {
     },
 });
 
-export const calculateBizHours = (value) => {
-    if ( value === "" || value === null || typeof value == 'undefined') return "";
-    let currentTime = moment().format();
-    let dateString = moment(value).format();
-    let diff = moment(currentTime).workingDiff(moment(dateString), 'hours'); // Calculate the difference including holidays &
+export const calculateBizHours = (start, end) => {
+    if ( start === "" || start === null || typeof start == 'undefined') return "";
+    if ( end === "" || end === null || typeof end == 'undefined') return "";
+    let startTime = moment(start).format();
+    let endTime = moment(end).format();
+    let diff = moment(startTime).workingDiff(moment(endTime), 'hours'); // Calculate the difference including holidays &
     return diff;
 };
 
